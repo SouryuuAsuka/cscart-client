@@ -1,0 +1,31 @@
+name: cscart-client-build
+run-name: ${{ github.actor }} starts building the cscart-client
+on:
+  push:
+    branches:
+      - main
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Тут надо прописать тесты"
+          # Тут надо тесты ебануть
+  publis:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Deploy using ssh
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST_IP }}
+        username: ${{ secrets.HOST_USERNAME }}
+        key: ${{ secrets.PRIVATE_KEY }}
+        passphrase: ${{ secrets.KEY_PASSPHRASE }}
+        port: 22
+        script: |
+          echo {$USER}
+          ssh -T git@github.com
+          cd ~/test-projects/cscart
+          git pull git@github.com:SouryuuAsuka/cscart-client.git main
+          git status
+          docker-compose build
+          docker-compose up -d

@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+
+  test-seopt-client:
+    build: ./
+    container_name: test-cscart-client
+    restart: always
+    networks:
+      - main-net
+
+networks:
+  main-net:
+    external: true

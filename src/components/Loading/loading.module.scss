@@ -1,0 +1,24 @@
+.loading {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: 1000;
+  background-color: var(--background);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__container {
+    position: relative;
+    max-width: 200px;
+    max-height: 200px;
+  }
+
+  &__spinner {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+
+  }
+}

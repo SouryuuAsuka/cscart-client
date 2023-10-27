@@ -1,0 +1,6 @@
+.product-list{
+  width: 75%;
+  @media (max-width: 760px) {
+    width: 100%;
+  }
+}
