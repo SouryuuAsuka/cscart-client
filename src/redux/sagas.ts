@@ -26,12 +26,13 @@ export const setFilters = (data: Filter[]) => {
 export function* watchGetFilters(): any {
   yield throttle(1000, 'GET_FILTERS', getFiltersAnync)
 };
-export const getFilters = (data: Filter[]) => {
+export const getFilters = () => {
   return { type: 'GET_FILTERS'}
 }
 function* getFiltersAnync(): any {
   try{
     const {data} = yield call(Api.get, '/filters.json');
+    console.log(data);
     yield put(setFilters(data));
   } catch (err) {
     console.log(err);

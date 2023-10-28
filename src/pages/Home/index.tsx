@@ -1,10 +1,10 @@
-import { Filters, ProductList } from '@/components'
+import { FiltersContainer, ProductList } from '@/components'
 import style from './home.module.scss'
 
 export function Home(){
   return(
     <div className={style.home}>
-      <Filters />
+      <FiltersContainer />
       <ProductList />
     </div>
   )

@@ -27,10 +27,12 @@ function App() {
       {
         loading
           ? <Loading />
-          :
-          <main>
-            <RouterProvider router={router} />
-          </main>
+          : <>
+            <header></header>
+            <main>
+              <RouterProvider router={router} />
+            </main>
+          </>
       }
     </>
   )

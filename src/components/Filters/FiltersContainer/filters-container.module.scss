@@ -1,4 +1,4 @@
-.filters{
+.filters-container{
   width: 25%;
   @media (max-width: 760px) {
     width: 100%;
@@ -6,6 +6,10 @@
 
   &__title{
     width: 100%;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 14px;
+    color: #a1a6aa;
   }
 
   &__body{
