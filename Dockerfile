@@ -6,6 +6,6 @@ COPY . .
 RUN npm run build
 
 FROM nginx:1.24
-COPY src/configuration/nginx.conf /etc/nginx/conf.d/default.conf
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 COPY --from=build-stage /usr/src/docker/test/cscart/client/build /usr/share/nginx/html
 CMD ["nginx", "-g", "daemon off;"]
