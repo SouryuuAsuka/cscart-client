@@ -1,0 +1,47 @@
+.filters-slider {
+  padding: 10px;
+  margin-bottom: 20px;
+
+  &__inputs {
+    display: flex;
+    align-items: center;
+
+    & * {
+      margin: 0 5px;
+    }
+  }
+
+  &__input-container {
+    display: flex;
+    align-items: center;
+  }
+
+  &__input-text {
+    width: 74px;
+    box-sizing: border-box;
+  }
+
+  &__slider-container {
+    width: 100%;
+    display: flex;
+  }
+  &__slider-num,
+  &__slider-num--left,
+  &__slider-num--right{
+    position: relative;
+    & span{
+      position: absolute;
+      top: 40px;
+    }
+  }
+  &__slider-num--left{
+    & span{
+      left: 0;
+    }
+  }
+  &__slider-num--right{
+    & span{
+      right: 0;
+    }
+  }
+}

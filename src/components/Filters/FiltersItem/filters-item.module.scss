@@ -1,12 +1,30 @@
-.filters-item{
-  
-  &__header{
+.filters-item {
 
+  &__header {
+    padding: 10px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    cursor: pointer;
+    justify-content: space-between;
+    user-select: none;
   }
-  &__title{
 
+  &__title {
+    color: #5a728b;
+    font-weight: bold;
   }
-  &__expand{
-    
+
+  &__expand,
+  &__expand_hide {
+    height: 16px;
+
+    & img {
+      height: 100%;
+    }
   }
+
+  &__expand_hide {
+    transform: rotate(180deg);
+  }
+
 }

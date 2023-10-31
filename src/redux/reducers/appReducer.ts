@@ -1,13 +1,31 @@
-import { Filter } from "@/types";
+import { ActiveFilter, Filter } from "@/types";
 
 export interface AppState {
   loading: boolean | null;
-  filters: Filter[]
+  filters: Filter[];
+  activeFilters: ActiveFilter[]
+  resetFilters: number;
+  pictureFilters: any[];
 }
 
 const initialState: AppState = {
   loading: true,
-  filters: []
+  filters: [],
+  activeFilters: [],
+  resetFilters: 0,
+  pictureFilters: [{
+    unique_id: 1,
+    list_variants: [
+      {
+        unique_id: 2,
+        icons: ['👟']
+      },
+      {
+        unique_id: 4,
+        icons: ['⭐']
+      },
+    ]
+  }]
 };
 
 export const appReducer = (state = initialState, action: any): AppState => {
@@ -25,7 +43,17 @@ export const appReducer = (state = initialState, action: any): AppState => {
     case 'SET_FILTERS':
       return {
         ...state,
-        filters: action.filters,
+        filters: action.payload,
+      };
+    case 'SET_ACTIVE_FILTERS':
+      return {
+        ...state,
+        activeFilters: action.payload,
+      };
+    case 'RESET_FILTERS':
+      return {
+        ...state,
+        resetFilters: ++state.resetFilters,
       };
     default:
       return state;

@@ -11,5 +11,5 @@ export type Filter = {
 
 export type ListVariant = {
   unique_id: number;
-  display_name: number;
+  display_name: string;
 }
