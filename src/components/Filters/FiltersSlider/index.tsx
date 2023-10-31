@@ -47,7 +47,6 @@ export const FiltersSlider = ({ filter }: Props) => {
       }
       localFilters.push(addFilter)
     }
-    console.log("localFilters" + JSON.stringify(localFilters));
     dispatch(setActiveFilters(localFilters));
   }
   const changeValue = (value: number, index: number) => {

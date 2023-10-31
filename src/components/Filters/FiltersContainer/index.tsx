@@ -24,7 +24,7 @@ export const FiltersContainer = () => {
         ))}
         <div className={style["filters-container__footer"]}>
           <button className={style["filters-container__reset-button"]} onClick={handleReset}>
-            reset
+            Reset
           </button>
         </div>
       </div>

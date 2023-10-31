@@ -46,14 +46,12 @@ export const useItemFilters = (filter: Filter) => {
       }
       localFilters.push(addFilter)
     }
-    console.log(JSON.stringify(localFilters))
 
     dispatch(setActiveFilters(localFilters));
     return getFilter();
   }
   const removeFromFilter = (id: number) => {
     let localFilters;
-    console.log(JSON.stringify(activeFilters))
     const newChecked = getFilter().list_variants.filter((fr) => {
       if (fr === id) return false;
       return true;
@@ -74,8 +72,6 @@ export const useItemFilters = (filter: Filter) => {
         }
       });
     } else localFilters =[]
-    console.log(JSON.stringify(localFilters))
-    console.log(newChecked)
     dispatch(setActiveFilters(localFilters));
     return newChecked;
   }

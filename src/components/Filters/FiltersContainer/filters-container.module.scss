@@ -16,9 +16,13 @@
     background-color: var(--background-secondary);
   }
   &__footer{
-
+    padding: 15px;
+    display: flex;
+    justify-content: flex-end;
   }
   &__reset-button{
-    padding: 5px;
+    padding: 10px 20px;
+    border-color: var(--border);
+    cursor: pointer;
   }
 }

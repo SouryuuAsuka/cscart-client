@@ -15,9 +15,7 @@ export const FiltersList = ({ filter }: Props) => {
   const resetFilters = useAppSelector((state) => state.app.resetFilters);
   const pictureFilters = useAppSelector((state) => state.app.pictureFilters);
   useEffect(() => {
-    console.log('rerender')
     const localFilters = getFilter();
-    console.log(localFilters)
     setCheckedList(localFilters?.list_variants ?? []);
 
   }, [resetFilters]);
@@ -27,7 +25,6 @@ export const FiltersList = ({ filter }: Props) => {
         let obj = {};
         for (let j = 0; j < pictureFilters[i].list_variants.length; j++) {
           const lv = pictureFilters[i].list_variants[j];
-          console.log(lv.unique_id)
           obj[lv.unique_id] = lv.icons
         }
         setPictures(obj);
